@@ -435,7 +435,7 @@ module Gollum
     #
     # Returns an Array with Objects of page name and count of matches
     def search(query)
-      args = [{}, '-i', '-c', query, @ref, '--']
+      args = [{}, '-i', '-I', '-c', query, @ref, '--']
       args << '--' << @page_file_dir if @page_file_dir
 
       @repo.git.grep(*args).split("\n").map! do |line|
