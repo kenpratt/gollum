@@ -55,6 +55,7 @@ module Gollum
       end
       data = process_tex(data)
       data.gsub!(/<p><\/p>/, '')
+      data = Rinku.auto_link(data, :urls)
       data
     end
 

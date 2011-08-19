@@ -6,6 +6,7 @@ require 'ostruct'
 require 'grit'
 require 'github/markup'
 require 'sanitize'
+require 'rinku'
 
 # internal
 require File.expand_path('../gollum/git_access', __FILE__)
