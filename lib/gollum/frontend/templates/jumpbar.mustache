@@ -1,0 +1,17 @@
+<div id="jumpbar">
+  <form action="/jump" method="get" id="jump-form">
+  <div id="jumpbar-fauxtext">
+    <input type="text" name="page" id="jump-page" value="Jump to page&hellip;">
+    <a href="#" id="jump-submit" title="Go">
+      <span>Go</span>
+    </a>
+  </div>
+  </form>
+</div>
+
+<script>
+  var pages = [];
+  {{#pages}}
+    pages.push('{{name}}');
+  {{/pages}}
+</script>
