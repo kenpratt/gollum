@@ -48,6 +48,7 @@ module Precious
       if page = wiki.page(@name)
         @page = page
         @content = page.raw_data
+        @referrer = request.referrer
         mustache :edit
       else
         mustache :create

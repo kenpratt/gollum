@@ -47,6 +47,10 @@ module Precious
         @format = (@page.format || false) if @format.nil?
         @format.to_s.downcase
       end
+
+      def cancel_url
+        @referrer || "/" + escaped_name
+      end
     end
   end
 end
