@@ -1,7 +1,7 @@
 module Precious
   module Views
     class Page < Layout
-      attr_reader :content, :page, :footer, :pages
+      attr_reader :content, :page, :footer
 
       def title
         @page.title

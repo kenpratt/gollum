@@ -121,6 +121,7 @@ module Precious
       @page     = wiki.page(@name)
       @page_num = [params[:page].to_i, 1].max
       @versions = @page.versions :page => @page_num
+      @pages    = wiki.pages
       mustache :history
     end
 
@@ -143,6 +144,7 @@ module Precious
       @page     = wiki.page(@name)
       diffs     = wiki.repo.diff(@versions.first, @versions.last, @page.path)
       @diff     = diffs.first
+      @pages    = wiki.pages
       mustache :compare
     end
 
@@ -169,6 +171,7 @@ module Precious
       wiki = Gollum::Wiki.new(settings.gollum_path, settings.wiki_options)
       @results = wiki.search @query
       @name = @query
+      @pages = wiki.pages
       mustache :search
     end
 
@@ -176,6 +179,7 @@ module Precious
       wiki = Gollum::Wiki.new(settings.gollum_path, settings.wiki_options)
       @results = wiki.pages
       @ref = wiki.ref
+      @pages = wiki.pages
       mustache :pages
     end
 
