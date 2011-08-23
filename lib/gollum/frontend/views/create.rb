@@ -39,6 +39,10 @@ module Precious
       def formats
         super(:markdown)
       end
+
+      def cancel_url
+        @referrer || "/"
+      end
     end
   end
 end
